@@ -1,0 +1,17 @@
+POST http://localhost:5555/questions/newsubject
+Content-Type: application/json
+
+{
+    "question": "can fishes fly?",
+    "answers": [
+        "yes but actually no",
+        "no but actually yes",
+        "who cares",
+        "is this a question? "
+    ],
+    "correct": 3,
+    "motherfucker": 2
+}
+
+######
+GET http://localhost:5555/questions/newsubject?number=5

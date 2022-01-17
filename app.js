@@ -5,7 +5,9 @@ import connectToDB from './middlewares/db.js'
 import errorHandler from './middlewares/errorHandler.js'
 
 const app = express()
-app.use(morgan('tiny'))
+morgan.token('body', (req, res) => JSON.stringify(req.body, null, 4));
+app.use(morgan(':method :url :status :body'))
+app.use(express.json())
 app.use(connectToDB)
 app.use('/questions', questionsRouter)
 app.use(errorHandler)
