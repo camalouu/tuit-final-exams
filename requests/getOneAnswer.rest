@@ -1,0 +1,9 @@
+POST http://localhost:5555/answers/newsubject
+Content-Type: application/json
+
+{
+    "answer": {
+        "questionId": "61e5042eaf084a124e2748b7",
+        "answer": 3
+    }
+}

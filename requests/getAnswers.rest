@@ -1,0 +1,20 @@
+POST http://localhost:5555/answers/newsubject
+Content-Type: application/json
+
+{
+    "answers": {
+            "61e5042eaf084a124e2748b7" : 3,
+            "61e4fd76c564660b6fcf15b8" : 2,
+            "61e531b87af78c1846d8fcd8" : 2,
+            "61e500486576720290970ffc" : 2,
+            "61e5056c19e4c1921067fe49" : 2,
+            "61e500cd79d523d7c814996d" : 2,
+            "61e4fd4fc564660b6fcf15b7" : 3,
+            "61e4fda8c564660b6fcf15ba" : 2,
+            "61e4fdc9c564660b6fcf15bc" : 3,
+            "61e507173dd09b1dbafdb7db" : 2,
+            "61e52e2e1c06c03e5a65f1b6" : 2,
+            "61e4fd8fc564660b6fcf15b9" : 2,
+            "61e4fdbcc564660b6fcf15bb" : 2
+    }
+}
