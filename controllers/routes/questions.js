@@ -8,7 +8,7 @@ const addNewQuestions = async (req, res, next) => {
         const newQuestion =
             await questionSchema.validate({ question, answers, correct }, { strict: true })
         await collection.insertOne(newQuestion)
-        return res.status(200).send(newQuestion)
+        return res.status(201).send(newQuestion)
     } catch (error) {
         next(error)
     }

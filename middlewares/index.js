@@ -1,16 +1,11 @@
-import { MongoClient } from 'mongodb'
-import { MONGODB_URI } from '../config.js'
+import database from '../utils/dbConnection.js'
 
-const connectToDB = async (req, res, next) => {
-    try {
-        const mongodb_client = new MongoClient(MONGODB_URI)
-        await mongodb_client.connect()
-        console.log("connected to mongo " + MONGODB_URI)
-        const db = mongodb_client.db('native-driver')
-        req.db = db
+const connectToDB = (req, res, next) => {
+    if (database) {
+        req.db = database
         next()
-    } catch (error) {
-        next(error)
+    } else {
+        next(new Error("database not found"))
     }
 }
 
@@ -21,7 +16,10 @@ const errorHandler = (error, req, res, next) => {
     }
     else if (error.name === "MongoServerError") {
         console.log(error.errInfo.details);
-        res.status(400).send({ error: error.errInfo })
+        res.status(500).send({ error: error.errInfo })
+    } else {
+        console.log(error.message)
+        res.status(500).send({ error: "something bad happened" })
     }
 }
 

@@ -7,6 +7,13 @@ const questionSchema = object({
 });
 
 //needs to be changed
+/*
+    {
+        "answers": {
+            [id of a question]: [answer for that question]
+        }
+    }
+*/
 const answersSchema = object({
     answers: object({})
 })

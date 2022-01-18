@@ -19,7 +19,8 @@ const getAnswersAndCheck = async (req, res, next) => {
         /// object keys are id's of answered questions and values are correctness of them
         const checked =
             questions.reduce(
-                (init, q) => ({ ...init, [q._id]: answers[q._id] === q.correct }), {})
+                (init, q) => ({ ...init, [q._id]: answers[q._id] === q.correct }), {}
+            )
 
         res.status(200).send({ checked })
     } catch (error) {
