@@ -1,6 +1,6 @@
 import { questionSchema } from "../../models/index.js"
 
-const addNewQuestions = async (req, res, next) => {
+const addNewQuestion = async (req, res, next) => {
     const subject = req.params.subject
     const { question, answers, correct } = req.body
     try {
@@ -31,6 +31,6 @@ const getRandomQuestions = async (req, res, next) => {
 }
 
 export {
-    addNewQuestions,
+    addNewQuestion,
     getRandomQuestions
 }

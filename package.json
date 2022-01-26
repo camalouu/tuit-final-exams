@@ -18,12 +18,15 @@
   },
   "homepage": "https://github.com/camalow/tuit-final-exams#readme",
   "dependencies": {
-    "dotenv": "^11.0.0",
     "express": "^4.17.2",
     "mongodb": "^4.3.0",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.15",
     "yup": "^0.32.11"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^11.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
 }
